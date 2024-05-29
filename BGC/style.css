@@ -1,0 +1,532 @@
+body, html {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: #3D3F3D;
+}
+
+.explore, .clubs, .filter, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+/*---- Sort & filter ----*/
+
+.filter form {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+/*---- Filter search btn ---*/
+
+.filter button, 
+.filter input[type="submit"] {
+    background-color: #6A6D70; 
+    color: #fff; 
+    border: 1px solid #6A6D70; 
+    border-radius: 5px; 
+    padding: 10px 25px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    
+}
+
+.filter button:hover, 
+.filter input[type="submit"]:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
+}
+
+/*--- Filter btns ----*/
+
+.filter select {
+    background-color: #fff; 
+    color: #3D3F3D; 
+    border: 1px solid #D7D7D7; 
+    border-radius: 5px; 
+    padding: 10px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: transform 0.3s, background 0.3s, border 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 204px; 
+    text-align: left; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-image: url('images/Arrow.png'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+}
+
+.filter select:hover, 
+.filter select:focus {
+    
+    border-color: #bbb; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+   
+}
+
+/*--- Club cards ---*/
+
+.club-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    
+}
+
+.club {
+    position: relative;
+    width: 390px;
+    height: 280px;
+    border: 1px solid #c7c7c7;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
+}
+
+.club h4 {
+    margin: 0;
+    font-size: 24px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30%;
+    width: 100%;
+}
+
+.club button {
+    position: absolute;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(72, 74, 74, 0.5);
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 40px; 
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, background 0.3s, border 0.3s;
+}
+
+.club button:hover {
+    background-color: rgba(31, 32, 32, 0.5);
+    transform: translateX(-50%) scale(1.1);
+    color: white;
+    border-color: white;
+}
+
+.club img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--- Modal for clubs ---*/
+
+.modal {
+    display: none; 
+    position: fixed; 
+    color: white;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+    background-color: #416179;
+    margin: 5% auto; 
+    padding: 40px;
+    border-radius: 10px;
+    width: 60%; 
+    max-width: 900px;
+    position: relative; 
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+#modal-image {
+    max-width: 40%; 
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    width: 60%; 
+    margin: 0 1%;
+}
+
+#modal-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#modal-description {
+    margin-top: 10px;
+    font-size: 16px;
+    flex-grow: 1; 
+    
+}
+
+#modal-link {
+    background-color: rgba(72, 74, 74, 0.2);
+    color: #ffff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    align-self: flex-start; 
+    transition: transform 0.2s, border 0.2s;
+}
+
+#modal-link:hover {
+    transform: scale(1.05);
+    background-color: rgba(72, 74, 74, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
+}
+
+.modal-facilities {
+    width: 97%;
+    background-color: #4E687B;
+    border: 1px solid #ffff;
+    padding: 15px;
+    margin-top: 5%;
+}
+
+.modal-facilities h3 {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.modal-facilities h4.facilities-heading {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ffffff; 
+    padding-bottom: 10px; 
+}
+
+#modal-facilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+#modal-facilities div {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 8px; 
+}
+
+#modal-facilities div img.facility-icon {
+    width: 44px; 
+    height: 44px; 
+    margin-right: 5px; 
+}
+
+.close {
+    color: #6A6D70;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    font-size: 24px;
+    font-weight: light; 
+    background-color: #ffff;
+    border-radius: 100px; 
+    padding: 2px 10px;
+    cursor: pointer;
+    transition: transform 0.1s; 
+}
+
+.close:hover,
+.close:focus {
+
+    border-color: #bbb; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+
+
+/*--- About modal ---*/
+.about-us {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.about-team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.about-team-member {
+    cursor: pointer;
+    text-align: center;
+    max-width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-team-member img {
+    width: 100%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.about-team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-team-member h3 {
+    margin: 10px 0 5px 0;
+    font-weight: 700;
+}
+
+.about-team-member p {
+    margin: 0;
+    color: #777;
+}
+
+/* Modal Styles */
+.about-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.about-modal-content {
+    background-color: #F5F5F7;
+    margin: 10% auto;
+    padding: 0;
+    border: none;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    animation: slide-in 0.5s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.about-modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#about-modal-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -75px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 5px solid #fff;
+}
+
+.about-modal-text {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #416179;
+    color: white;
+    
+}
+
+#about-modal-name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#about-modal-role {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+#about-modal-description {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.about-close {
+    color: #6A6D70;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 35px;
+    font-weight: lighter;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .filter form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter select, .filter button {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .club {
+        width: 90%;
+        height: 150px;
+    }
+
+    .modal-container {
+        flex-direction: column;
+    }
+
+    #modal-image {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 10px auto; 
+        display: block;
+    }
+
+    .modal-text {
+        width: 100%;
+        align-items: center;
+    }
+
+    .modal-facilities {
+        display: none;
+    }
+
+    #modal-link {
+        margin: 0 auto 0 auto; 
+        display: block;
+    }
+
+    /*--- Modal media queres ---*/
+    .about-modal-container {
+        flex-direction: column;
+    }
+
+    #about-modal-image {
+        max-width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .about-modal-text {
+        max-width: 100%;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .filter select, .filter button {
+        width: 100%;
+        max-width: 100%;
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .club {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .filter select, .filter button {
+        padding: 9px 10px;
+        font-size: 16px;
+        width: 135px;
+    }
+
+    .club button {
+        padding: 6px 18px;
+        width: 110px;
+    }
+
+    .club {
+        width: 275px;
+        height: 240px;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+    
+    
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Os</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="about-us">
+        <h2>Om Os</h2>
+        <div class="about-team">
+            <div class="about-team-member" onclick="openTeamModal('person1')">
+                <img src="images/christoffer_om.png" alt="Christoffer Krogh">
+                <h3>Christoffer Krogh</h3>
+                <p>Google Ads Manager</p>
+            </div>
+            <div class="about-team-member" onclick="openTeamModal('person2')">
+                <img src="images/Christian_om.png" alt="Christian Jensen">
+                <h3>Christian Jensen</h3>
+                <p>E-commerce & online marketing</p>
+            </div>
+            <div class="about-team-member" onclick="openTeamModal('person3')">
+                <img src="images/Marth_om.png" alt="Martin Jensen">
+                <h3>Martin Jensen</h3>
+                <p>Backend-developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="about-modal" class="about-modal">
+        <div class="about-modal-content">
+            <span class="about-close" onclick="closeTeamModal()">&times;</span>
+            <div class="about-modal-container">
+                <img id="about-modal-image" src="" alt="Person Image">
+                <div class="about-modal-text">
+                    <h2 id="about-modal-name"></h2>
+                    <p id="about-modal-role"></p>
+                    <p id="about-modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="about.js"></script>
+</body>
+</html>
+
+

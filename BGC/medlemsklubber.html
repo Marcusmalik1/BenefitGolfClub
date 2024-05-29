@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefit Golf Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="filter">
+        <h3>FIND DIN KLUB</h3>
+        <form id="filter-form">
+            <select class="custom-filter" id="region">
+                <option value="">Regionsfilter</option>
+                <option value="Midtjylland">Midtjylland</option>
+                <option value="Nordjylland">Nordjylland</option>
+                <option value="Syddanmark">Syddanmark</option>
+                <option value="Sjælland">Sjælland</option>
+            </select>
+            
+            <select class="custom-filter" id="club_type">
+                <option value="">Klubfiltrering</option>
+                <option value="Randers Golf Klub">Randers Golf Klub</option>
+                <option value="Aarhus Golf Klub">Aarhus Golf Klub</option>
+                <option value="Stensballe Golf Klub">Stensballe Golf Klub</option>
+                <option value="Norddjurs Golfklub">Norddjurs Golfklub</option>
+                <option value="Skanderborg Golfklub">Skanderborg Golfklub</option>
+                <option value="Hobro Golfklub">Hobro Golfklub</option>
+                <option value="Lyngbygaard Golf">Lyngbygaard Golf</option>
+                <option value="Aarhus Aadal Golf Club">Aarhus Aadal Golf Club</option>
+                <option value="Randers Fjord Golfklub">Randers Fjord Golfklub</option>
+            </select>
+            
+            <select class="custom-filter" id="holes">
+                <option value="">Antal huller</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="9">9</option>
+                <option value="18">18</option>
+                <option value="27">27</option>
+            </select>
+            
+            <select class="custom-filter" id="range">
+                <option value="">Range</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            
+            <select class="custom-filter" id="facilities">
+                <option value="">Faciliteter</option>
+                <option value="Driving Range">Driving Range</option>
+                <option value="Parkering">Parkering</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Café">Café</option>
+                <option value="Golfbil">Golfbil</option>
+                <option value="Golfvogn">Golfvogn</option>
+                <option value="Shop">Shop</option>
+                <option value="Buggy">Buggy</option>
+            </select>
+            
+            <button type="button" onclick="filterClubs()">Find din klub</button>
+        </form>
+        
+        <div class="club-list" id="club-list">
+            
+        </div>
+    </section>
+    
+    <!-- Modal -->
+<div id="club-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-container">
+            <img id="modal-image" src="" alt="Club Image">
+            <div class="modal-text">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description1"></p>
+                <p id="modal-description2"></p>
+                <a id="modal-link" href="club-page.html" onclick="saveClubData()">GÅ TIL KLUBBEN</a>
+            </div>
+        </div>
+        <div class="modal-facilities">
+            <h4 class="facilities-heading">Faciliteter</h4>
+            <div id="modal-facilities"></div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+
+Notes
+
+<!--                 <button id="modal-link">GÅ TIL KLUBBEN</button> -->
+
